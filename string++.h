@@ -10,20 +10,25 @@ bool startsWith(const std::string& input, const std::string& phrase);
 // Returns true if input starts with phrase at offset
 bool startsWith(const std::string& input, const std::string& phrase, int offset);
 
-// bool startsWithIgnoreCase(std::string& input, std::string& phrase);
+// Returns true if input starts with phrase, ignores case
+bool startsWithIgnoreCase(std::string& input, std::string& phrase);
 
-// bool startsWithIgnoreCase(std::string& input, std::string& phrase, int& offset);
+// Returns true if input starts with phrase at offset, ignores case
+bool startsWithIgnoreCase(std::string& input, std::string& phrase, int offset);
 
 // Returns true if input ends with phrase
 bool endsWith(const std::string& input, const std::string& phrase);
 
-// bool endsWith(std::string& input, std::string& phrase, int& offset);
+// Returns true if input ends with phrase at offset from back
+bool endsWith(const std::string& input, const std::string& phrase, int offset);
 
-// bool endsWithIgnoreCase(std::string& input, std::string& phrase);
+// Returns true if input ends with phrase, ignores case
+bool endsWithIgnoreCase(std::string& input, std::string& phrase);
 
-// bool endsWithIgnoreCase(std::string& input, std::string& phrase, int& offset);
+// Returns true if input ends with phrase at offset from back
+bool endsWithIgnoreCase(std::string& input, std::string& phrase, int offset);
 
-// Compares first and second, ignoring case
+// Returns true if first and second are the same, ignoring case
 bool equalsIgnoreCase(const std::string& first, const std::string& second);
 
 // Returns the start index of the first instance of phrase in input, -1 if not found
@@ -44,10 +49,10 @@ void replaceFirst(std::string& input, const std::string& old, const std::string&
 void replaceLast(std::string& input, const std::string& old, const std::string& replacement);
 
 // Returns a copy of the string in lower case
-void toLowerCase(std::string&);
+void toLowerCase(std::string& input);
 
 // Returns a copy of the string in upper case
-void toUpperCase(std::string&);
+void toUpperCase(std::string& input);
 
 // Returns a copy of the string in camel case format, signified by delimiter
 // std::string toCamelCase(std::string, char& delimiter);
@@ -56,4 +61,4 @@ void toUpperCase(std::string&);
 // std::string toInverseCamelCase(std::string, char& delimiter);
 
 // Returns a copy of the string with leading and trailing whitespace trimmed
-void trim(std::string&);
+void trimWhitespace(std::string& input);
