@@ -1,13 +1,29 @@
 #include "string++.h"
 
-// FUNCTIONALITY ONLY, NOT YET FINISHED
-// THIS ALL NEEDS TO BE UPDATED TO USE ITERATORS AND STRING MEMBER VALUES
+bool spp_contains(const std::string& input, const std::string& phrase) {
+    bool matches = false;
+    std::size_t input_size = input.size();
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t i = 0; i < input_size; ++i) {
+        if (input[i] == phrase[0]) {
+            matches = true;
+            for (std::size_t j = 0; j < phrase_size; ++j) {
+                if (input[i + j] != phrase[j]) {
+                    matches = false;
+                    break;
+                }
+            }
+            if (matches == true) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
-typedef unsigned long long ullong;
-
-bool startsWith(const std::string& input, const std::string& phrase) {
-    ullong phrase_size = phrase.size();
-    for (ullong i = 0; i < phrase_size; ++i) {
+bool spp_startsWith(const std::string& input, const std::string& phrase) {
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t i = 0; i < phrase_size; ++i) {
         if (input[i] != phrase[i]) {
             return false;
         }
@@ -15,9 +31,9 @@ bool startsWith(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool startsWith(const std::string& input, const std::string& phrase, int offset) {
-    ullong phrase_size = phrase.size();
-    for (ullong  i = 0; i < phrase_size; ++i) {
+bool spp_startsWith(const std::string& input, const std::string& phrase, int offset) {
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t  i = 0; i < phrase_size; ++i) {
         if (input[offset + i] != phrase[i]) {
             return false;
         }
@@ -25,30 +41,30 @@ bool startsWith(const std::string& input, const std::string& phrase, int offset)
     return true;
 }
 
-bool startsWithIgnoreCase(const std::string& input, const std::string& phrase) {
-    ullong phrase_size = phrase.size();
-    for (ullong i = 0; i < phrase_size; ++i) {
-        if (std::toLower(input[i]) != std::toLower(phrase[i])) {
+bool spp_startsWithIgnoreCase(const std::string& input, const std::string& phrase) {
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t i = 0; i < phrase_size; ++i) {
+        if (std::tolower(input[i]) != std::tolower(phrase[i])) {
             return false;
         }
     }
     return true;
 }
 
-bool startsWithIgnoreCase(const std::string& input, const std::string& phrase, int offset) {
-    ullong phrase_size = phrase.size();
-    for (ullong  i = 0; i < phrase_size; ++i) {
-        if (std::toLower(input[offset + i]) != std::toLower(phrase[i])) {
+bool spp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, int offset) {
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t  i = 0; i < phrase_size; ++i) {
+        if (std::tolower(input[offset + i]) != std::tolower(phrase[i])) {
             return false;
         }
     }
     return true;
 }
 
-bool endsWith(const std::string& input, const std::string& phrase) {
-    ullong input_size = input.size();
-    ullong phrase_size = phrase.size();
-    for (ullong i = 0; i < phrase_size; ++i) {
+bool spp_endsWith(const std::string& input, const std::string& phrase) {
+    std::size_t input_size = input.size();
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t i = 0; i < phrase_size; ++i) {
         if (input[input_size - i] != phrase[phrase_size - i]) {
             return false;
         }
@@ -56,10 +72,10 @@ bool endsWith(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool endsWith(const std::string& input, const std::string& phrase, int offset) {
-    ullong input_size = input.size();
-    ullong phrase_size = phrase.size();
-    for (ullong i = 0; i < phrase_size; ++i) {
+bool spp_endsWith(const std::string& input, const std::string& phrase, int offset) {
+    std::size_t input_size = input.size();
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t i = 0; i < phrase_size; ++i) {
         if (input[input_size - offset - i] != phrase[phrase_size - i]) {
             return false;
         }
@@ -67,22 +83,22 @@ bool endsWith(const std::string& input, const std::string& phrase, int offset) {
     return true;
 }
 
-bool endsWithIgnoreCase(const std::string& input, const std::string& phrase) {
-    ullong input_size = input.size();
-    ullong phrase_size = phrase.size();
-    for (ullong i = 0; i < phrase_size; ++i) {
-        if (std::toLower(input[input_size - i]) != std::toLower(phrase[phrase_size - i])) {
+bool spp_endsWithIgnoreCase(const std::string& input, const std::string& phrase) {
+    std::size_t input_size = input.size();
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t i = 0; i < phrase_size; ++i) {
+        if (std::tolower(input[input_size - i]) != std::tolower(phrase[phrase_size - i])) {
             return false;
         }
     }
     return true;
 }
 
-bool endsWithIgnoreCase(const std::string& input, const std::string& phrase, int offset) {
-    ullong input_size = input.size();
-    ullong phrase_size = phrase.size();
-    for (ullong i = 0; i < phrase_size; ++i) {
-        if (std::toLower(input[input_size - offset - i]) != std::toLower(phrase[phrase_size - i])) {
+bool spp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, int offset) {
+    std::size_t input_size = input.size();
+    std::size_t phrase_size = phrase.size();
+    for (std::size_t i = 0; i < phrase_size; ++i) {
+        if (std::tolower(input[input_size - offset - i]) != std::tolower(phrase[phrase_size - i])) {
             return false;
         }
     }
@@ -90,112 +106,64 @@ bool endsWithIgnoreCase(const std::string& input, const std::string& phrase, int
 }
 
 
-bool equalsIgnoreCase(const std::string& first, const std::string& second) {
-    ullong first_size = first.size();
-    ullong second_size = second.size();
-    for (ullong i = 0; i < first_size; ++i) {
-        if (std::toLower(first[i]) != std::toLower(second[i])) {
+bool spp_equalsIgnoreCase(const std::string& first, const std::string& second) {
+    std::size_t first_size = first.size();
+    std::size_t second_size = second.size();
+    for (std::size_t i = 0; i < first_size; ++i) {
+        if (std::tolower(first[i]) != std::tolower(second[i])) {
             return false;
         }
     }
     return true;
 }
 
-int firstIndexOf(const std::string& input, const std::string& phrase) {
-    bool matches = true;
-    ullong index = -1;
-    ullong input_size = input.size();
-    ullong phrase_size = phrase.size();
-    for (ullong i = 0; i < input_size; ++i) {
-        if (input[i] == phrase[0]) {
-            matches = true;
-            index = i;
-            for (ullong j = 0; j < phrase_size; ++j) {
-                if (input[index + j] != phrase[j]) {
-                    matches = false;
-                    index = -1;
-                    break;
-                }
-            }
-            if (matches == true) {
-                break;
-            }
-        }
-    }
-    return index;
-}
-
-int lastIndexOf(const std::string& input, const std::string& phrase) {
-    ullong index = -1;
-    ullong old_index = -1;
-    ullong input_size = input.size();
-    ullong phrase_size = phrase.size();
-    for (ullong i = 0; i < input_size; ++i) {
-        if (input[i] == phrase[0]) {
-            index = i;
-            old_index = index;
-            for (ullong j = 0; j < phrase_size; ++j) {
-                if (input[index + j] != phrase[j]) {
-                    index = old_index;
-                    break;
-                }
-            }
-        }
-    }
-    return index;
-}
-
-void replace(std::string& input, const std::string& old, const std::string& replacement) {
-    ullong old_start_index;
-    ullong old_end_index;
-    ullong input_size = input.size();
-    ullong old_size = input.size();
-    ullong replacement_size = replacement.size();
-    for (ullong i = 0; i < input_size; ++i) {
+void spp_replace(std::string& input, const std::string& old, const std::string& replacement) {
+    std::size_t old_start_index;
+    std::size_t old_end_index;
+    std::size_t input_size = input.size();
+    std::size_t old_size = input.size();
+    std::size_t replacement_size = replacement.size();
+    for (std::size_t i = 0; i < input_size; ++i) {
         if (input[i] == old[0]) {
             old_start_index = i;
-            for (ullong j = 0; j < old_size; ++j) {
+            for (std::size_t j = 0; j < old_size; ++j) {
             }
         }
     }
     return;
 }
 
-void replaceFirst(std::string& input, const std::string& old, const std::string& replacement) {
+void spp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement) {
     return;
 }
 
-void replaceLast(std::string& input, const std::string& old, const std::string& replacement) {
+void spp_replaceLast(std::string& input, const std::string& old, const std::string& replacement) {
     return;
 }
 
-void toLowerCase(std::string& input) {
-    ullong input_size = input.size();
-    for (ullong i = 0; i < input_size; ++i) {
-        input[i] = std::toLower(input[i]);
+void spp_tolowerCase(std::string& input) {
+    std::size_t input_size = input.size();
+    for (std::size_t i = 0; i < input_size; ++i) {
+        input[i] = std::tolower(input[i]);
     }
     return;
 }
 
-void toUpperCase(std::string& input) {
-    ullong input_size = input.size();
-    for (ullong i = 0; i < input_size; ++i) {
-        input[i] = std::toUpper(input[i]);
+void spp_toUpperCase(std::string& input) {
+    std::size_t input_size = input.size();
+    for (std::size_t i = 0; i < input_size; ++i) {
+        input[i] = std::toupper(input[i]);
     }
     return;
 }
 
-// void toCamelCase(std::string, char& delimiter);
-
-// void toInverseCamelCase(std::string, char& delimiter);
-
-void trimWhitespace(std::string& input) {
-    ullong input_size = input.size();
-    for (ullong i = 0; i < input_size; ++i) {
-        input[i] = std::toUpper(input[i]);
+void spp_trimWhitespace(std::string& input) {
+    std::size_t input_size = input.size();
+    for (std::size_t i = 0; i < input_size; ++i) {
+        input[i] = std::toupper(input[i]);
     }
-    for (ullong i = 0; i < input_size; ++i) {
-        input[i] = std::toUpper(input[i]);
+    for (std::size_t i = 0; i < input_size; ++i) {
+        input[i] = std::toupper(input[i]);
     }
     return;
 }
