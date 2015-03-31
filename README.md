@@ -20,7 +20,7 @@ Returns true if the *input* string contains *phrase*
 
 #### spp_startsWith()
 ```C++
-bool spp_startsWith(const std::string& input, const std::string& phrase)
+> bool spp_startsWith(const std::string& input, const std::string& phrase)
 ```
 > Returns true if the *input* string starts with *phrase*
 
