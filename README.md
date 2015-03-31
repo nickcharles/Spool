@@ -4,11 +4,11 @@ StringPP is a lightweight and modular string manipulation library for C++. It se
 
 ### Lightweight
 
-- With the full StringPP library weighing in at just over 300 lines, you get exactly what you need, and that's it.
+With the full StringPP library weighing in at just over 300 lines, you get exactly what you need, and that's it.
 
 ### Modular
 
-- Only need one or two functions? Take them. StringPP was built with this in mind, so every function is written entirely independent from the rest of the library.
+Only need one or two functions? Take them. StringPP was built with this in mind, so every function is written entirely independent from the rest of the library.
 
 ### Documentation
 
@@ -22,7 +22,7 @@ Returns true if the *input* string contains *phrase*
 ```C++
 bool spp_startsWith(const std::string& input, const std::string& phrase)
 ```
-Returns true if the *input* string starts with *phrase*
+> Returns true if the *input* string starts with *phrase*
 
 #### spp_startsWith()
 ```C++
