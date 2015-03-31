@@ -4,6 +4,8 @@ Spool is a lightweight and modular string manipulation library for C++. It seeks
 
 ### Documentation
 
+Links to each function will go here.
+
 #### sp_contains()
 ```C++
 bool sp_contains(const std::string& input, const std::string& phrase)
@@ -11,7 +13,7 @@ bool sp_contains(const std::string& input, const std::string& phrase)
 > Returns true if the *input* string contains *phrase*
 
 ```C++
-bool sp_contains(const std::string& input, const std::string& phrase, std::size_t offset)
+bool sp_contains(const std::string& input, const std::string& phrase, const std::size_t offset)
 ```
 > Returns true if the *input* string contains *phrase* beyond *offset*
 
@@ -22,7 +24,7 @@ bool sp_startsWith(const std::string& input, const std::string& phrase)
 > Returns true if the *input* string starts with *phrase*
 
 ```C++
-bool sp_startsWith(const std::string& input, const std::string& phrase, size_t offset)
+bool sp_startsWith(const std::string& input, const std::string& phrase, const std::size_t offset)
 ```
 > Returns true if the *input* string starts with *phrase* at *offset*
 
@@ -33,7 +35,7 @@ bool sp_startsWithIgnoreCase(std::string& input, std::string& phrase)
 > Returns true if the *input* string starts with *phrase*, ignores case
 
 ```C++
-bool sp_startsWithIgnoreCase(std::string& input, std::string& phrase, size_t offset)
+bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, const std::size_t offset)
 ```
 > Returns true if the *input* string starts with *phrase* at *offset*, ignores case
 
@@ -44,18 +46,18 @@ bool sp_endsWith(const std::string& input, const std::string& phrase)
 > Returns true if the *input* string ends with *phrase*
 
 ```C++
-bool sp_endsWith(const std::string& input, const std::string& phrase, size_t offset)
+bool sp_endsWith(const std::string& input, const std::string& phrase, const std::size_t offset)
 ```
 > Returns true if the *input* string ends with *phrase* at *offset* from back
 
 #### sp_endsWithIgnoreCase()
 ```C++
-bool sp_endsWithIgnoreCase(std::string& input, std::string& phrase)
+bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase)
 ```
 > Returns true if the *input* string ends with *phrase*, ignores case
 
 ```C++
-bool sp_endsWithIgnoreCase(std::string& input, std::string& phrase, size_t offset)
+bool sp_endsWithIgnoreCase(std::string& input, std::string& phrase, const std::size_t offset)
 ```
 > Returns true if the *input* string ends with *phrase* at *offset* from back, ignores case
 

@@ -7,7 +7,7 @@ bool sp_contains(const std::string& input, const std::string& phrase) {
     return false;
 }
 
-bool sp_contains(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_contains(const std::string& input, const std::string& phrase, const std::size_t offset) {
     if (input.find(phrase, offset) != std::string::npos) {
         return true;
     }
@@ -24,7 +24,7 @@ bool sp_startsWith(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool sp_startsWith(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_startsWith(const std::string& input, const std::string& phrase, const std::size_t offset) {
     std::size_t phrase_size = phrase.size();
     for (std::size_t  i = 0; i < phrase_size; ++i) {
         if (input[offset + i] != phrase[i]) {
@@ -44,7 +44,7 @@ bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase
     return true;
 }
 
-bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, const std::size_t offset) {
     std::size_t phrase_size = phrase.size();
     for (std::size_t  i = 0; i < phrase_size; ++i) {
         if (std::tolower(input[offset + i]) != std::tolower(phrase[i])) {
@@ -65,7 +65,7 @@ bool sp_endsWith(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_endsWith(const std::string& input, const std::string& phrase, const std::size_t offset) {
     std::size_t input_size = input.size();
     std::size_t phrase_size = phrase.size();
     for (std::size_t i = 0; i < phrase_size; ++i) {
@@ -87,7 +87,7 @@ bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase) 
     return true;
 }
 
-bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, const std::size_t offset) {
     std::size_t input_size = input.size();
     std::size_t phrase_size = phrase.size();
     for (std::size_t i = 0; i < phrase_size; ++i) {
