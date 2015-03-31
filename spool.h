@@ -14,25 +14,25 @@ bool sp_contains(const std::string& input, const std::string& phrase, std::size_
 bool sp_startsWith(const std::string& input, const std::string& phrase);
 
 // Returns true if input starts with phrase at offset
-bool sp_startsWith(const std::string& input, const std::string& phrase, int offset);
+bool sp_startsWith(const std::string& input, const std::string& phrase, std::size_t offset);
 
 // Returns true if input starts with phrase, ignores case
 bool sp_startsWithIgnoreCase(std::string& input, std::string& phrase);
 
 // Returns true if input starts with phrase at offset, ignores case
-bool sp_startsWithIgnoreCase(std::string& input, std::string& phrase, int offset);
+bool sp_startsWithIgnoreCase(std::string& input, std::string& phrase, std::size_t offset);
 
 // Returns true if input ends with phrase
 bool sp_endsWith(const std::string& input, const std::string& phrase);
 
 // Returns true if input ends with phrase at offset from back
-bool sp_endsWith(const std::string& input, const std::string& phrase, int offset);
+bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_t offset);
 
 // Returns true if input ends with phrase, ignores case
 bool sp_endsWithIgnoreCase(std::string& input, std::string& phrase);
 
 // Returns true if input ends with phrase at offset from back
-bool sp_endsWithIgnoreCase(std::string& input, std::string& phrase, int offset);
+bool sp_endsWithIgnoreCase(std::string& input, std::string& phrase, std::size_t offset);
 
 // Returns true if first and second are the same, ignoring case
 bool sp_equalsIgnoreCase(const std::string& first, const std::string& second);
