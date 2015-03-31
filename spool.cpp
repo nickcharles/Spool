@@ -1,6 +1,6 @@
-#include "string++.h"
+#include "spool.h"
 
-bool spp_contains(const std::string& input, const std::string& phrase) {
+bool sp_contains(const std::string& input, const std::string& phrase) {
     bool matches = false;
     std::size_t input_size = input.size();
     std::size_t phrase_size = phrase.size();
@@ -21,7 +21,7 @@ bool spp_contains(const std::string& input, const std::string& phrase) {
     return false;
 }
 
-bool spp_startsWith(const std::string& input, const std::string& phrase) {
+bool sp_startsWith(const std::string& input, const std::string& phrase) {
     std::size_t phrase_size = phrase.size();
     for (std::size_t i = 0; i < phrase_size; ++i) {
         if (input[i] != phrase[i]) {
@@ -31,7 +31,7 @@ bool spp_startsWith(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool spp_startsWith(const std::string& input, const std::string& phrase, int offset) {
+bool sp_startsWith(const std::string& input, const std::string& phrase, int offset) {
     std::size_t phrase_size = phrase.size();
     for (std::size_t  i = 0; i < phrase_size; ++i) {
         if (input[offset + i] != phrase[i]) {
@@ -41,7 +41,7 @@ bool spp_startsWith(const std::string& input, const std::string& phrase, int off
     return true;
 }
 
-bool spp_startsWithIgnoreCase(const std::string& input, const std::string& phrase) {
+bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase) {
     std::size_t phrase_size = phrase.size();
     for (std::size_t i = 0; i < phrase_size; ++i) {
         if (std::tolower(input[i]) != std::tolower(phrase[i])) {
@@ -51,7 +51,7 @@ bool spp_startsWithIgnoreCase(const std::string& input, const std::string& phras
     return true;
 }
 
-bool spp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, int offset) {
+bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, int offset) {
     std::size_t phrase_size = phrase.size();
     for (std::size_t  i = 0; i < phrase_size; ++i) {
         if (std::tolower(input[offset + i]) != std::tolower(phrase[i])) {
@@ -61,7 +61,7 @@ bool spp_startsWithIgnoreCase(const std::string& input, const std::string& phras
     return true;
 }
 
-bool spp_endsWith(const std::string& input, const std::string& phrase) {
+bool sp_endsWith(const std::string& input, const std::string& phrase) {
     std::size_t input_size = input.size();
     std::size_t phrase_size = phrase.size();
     for (std::size_t i = 0; i < phrase_size; ++i) {
@@ -72,7 +72,7 @@ bool spp_endsWith(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool spp_endsWith(const std::string& input, const std::string& phrase, int offset) {
+bool sp_endsWith(const std::string& input, const std::string& phrase, int offset) {
     std::size_t input_size = input.size();
     std::size_t phrase_size = phrase.size();
     for (std::size_t i = 0; i < phrase_size; ++i) {
@@ -83,7 +83,7 @@ bool spp_endsWith(const std::string& input, const std::string& phrase, int offse
     return true;
 }
 
-bool spp_endsWithIgnoreCase(const std::string& input, const std::string& phrase) {
+bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase) {
     std::size_t input_size = input.size();
     std::size_t phrase_size = phrase.size();
     for (std::size_t i = 0; i < phrase_size; ++i) {
@@ -94,7 +94,7 @@ bool spp_endsWithIgnoreCase(const std::string& input, const std::string& phrase)
     return true;
 }
 
-bool spp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, int offset) {
+bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, int offset) {
     std::size_t input_size = input.size();
     std::size_t phrase_size = phrase.size();
     for (std::size_t i = 0; i < phrase_size; ++i) {
@@ -106,7 +106,7 @@ bool spp_endsWithIgnoreCase(const std::string& input, const std::string& phrase,
 }
 
 
-bool spp_equalsIgnoreCase(const std::string& first, const std::string& second) {
+bool sp_equalsIgnoreCase(const std::string& first, const std::string& second) {
     std::size_t first_size = first.size();
     std::size_t second_size = second.size();
     for (std::size_t i = 0; i < first_size; ++i) {
@@ -117,7 +117,7 @@ bool spp_equalsIgnoreCase(const std::string& first, const std::string& second) {
     return true;
 }
 
-void spp_replace(std::string& input, const std::string& old, const std::string& replacement) {
+void sp_replace(std::string& input, const std::string& old, const std::string& replacement) {
     std::size_t old_start_index;
     std::size_t old_end_index;
     std::size_t input_size = input.size();
@@ -133,15 +133,15 @@ void spp_replace(std::string& input, const std::string& old, const std::string& 
     return;
 }
 
-void spp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement) {
+void sp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement) {
     return;
 }
 
-void spp_replaceLast(std::string& input, const std::string& old, const std::string& replacement) {
+void sp_replaceLast(std::string& input, const std::string& old, const std::string& replacement) {
     return;
 }
 
-void spp_tolowerCase(std::string& input) {
+void sp_tolowerCase(std::string& input) {
     std::size_t input_size = input.size();
     for (std::size_t i = 0; i < input_size; ++i) {
         input[i] = std::tolower(input[i]);
@@ -149,7 +149,7 @@ void spp_tolowerCase(std::string& input) {
     return;
 }
 
-void spp_toUpperCase(std::string& input) {
+void sp_toUpperCase(std::string& input) {
     std::size_t input_size = input.size();
     for (std::size_t i = 0; i < input_size; ++i) {
         input[i] = std::toupper(input[i]);
@@ -157,7 +157,7 @@ void spp_toUpperCase(std::string& input) {
     return;
 }
 
-void spp_trimWhitespace(std::string& input) {
+void sp_trimWhitespace(std::string& input) {
     std::size_t input_size = input.size();
     for (std::size_t i = 0; i < input_size; ++i) {
         input[i] = std::toupper(input[i]);
