@@ -1,4 +1,4 @@
-String++
+### String++
 
 String++ is a lightweight and modular string manipulation library for C++. It seeks to replicate the greater string functionality provided by languages such as Java and Python. Stop wasting time rewriting the same old string functions for every new project.
 
