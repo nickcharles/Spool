@@ -16,94 +16,94 @@ StringPP is a lightweight and modular string manipulation library for C++. It se
 ```C++
 bool spp_contains(const std::string& input, const std::string& phrase)
 ```
-Returns true if the input string contains phrase
+Returns true if the *input* string contains *phrase*
 
 #### spp_startsWith()
 ```C++
 bool spp_startsWith(const std::string& input, const std::string& phrase)
 ```
-Returns true if the input string starts with phrase
+Returns true if the *input* string starts with *phrase*
 
 #### spp_startsWith()
 ```C++
 bool spp_startsWith(const std::string& input, const std::string& phrase, int offset)
 ```
-Returns true if the input string starts with phrase at offset
+Returns true if the *input* string starts with *phrase* at *offset*
 
 #### spp_startsWithIgnoreCase()
 ```C++
 bool spp_startsWithIgnoreCase(std::string& input, std::string& phrase)
 ```
-Returns true if the input string starts with phrase, ignores case
+Returns true if the *input* string starts with *phrase*, ignores case
 
 #### spp_startsWithIgnoreCase()
 ```C++
 bool spp_startsWithIgnoreCase(std::string& input, std::string& phrase, int offset)
 ```
-Returns true if the input string starts with phrase at offset, ignores case
+Returns true if the *input* string starts with *phrase* at *offset*, ignores case
 
 #### spp_endsWith()
 ```C++
 bool spp_endsWith(const std::string& input, const std::string& phrase)
 ```
-Returns true if the input string ends with phrase
+Returns true if the *input* string ends with *phrase*
 
 #### spp_endsWith()
 ```C++
 bool spp_endsWith(const std::string& input, const std::string& phrase, int offset)
 ```
-Returns true if the input string ends with phrase at offset from back
+Returns true if the *input* string ends with *phrase* at *offset* from back
 
 #### spp_endsWithIgnoreCase()
 ```C++
 bool spp_endsWithIgnoreCase(std::string& input, std::string& phrase)
 ```
-Returns true if the input string ends with phrase, ignores case
+Returns true if the *input* string ends with *phrase*, ignores case
 
 #### spp_endsWithIgnoreCase()
 ```C++
 bool spp_endsWithIgnoreCase(std::string& input, std::string& phrase, int offset)
 ```
-Returns true if the input string ends with phrase at offset from back
+Returns true if the *input* string ends with *phrase* at *offset* from back
 
 #### spp_equalsIgnoreCase()
 ```C++
 bool spp_equalsIgnoreCase(const std::string& first, const std::string& second)
 ```
-Returns true if the strings first and second are the same, ignoring case
+Returns true if the strings *first* and *second* are the same, ignoring case
 
 #### spp_replace()
 ```C++
 void spp_replace(std::string& input, const std::string& old, const std::string& replacement)
 ```
-Returns a copy of the input string with every instance of old replaced with replacement
+Returns a copy of the *input* string with every instance of *old* replaced with *replacement*
 
 #### spp_replaceFirst()
 ```C++
 void spp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement)
 ```
-Returns a copy of the input string with the first instance of old replaced with replacement
+Returns a copy of the *input* string with the first instance of *old* replaced with *replacement*
 
 #### spp_replaceLast()
 ```C++
 void spp_replaceLast(std::string& input, const std::string& old, const std::string& replacement)
 ```
-Returns a copy of the input string with the last instance of old replaced with replacement
+Returns a copy of the *input* string with the last instance of *old* replaced with *replacement*
 
 #### spp_toLowerCase()
 ```C++
 void spp_toLowerCase(std::string& input)
 ```
-Returns a copy of the input string in lower case
+Returns a copy of the *input* string in lower case
 
 #### spp_toUpperCase()
 ```C++
 void spp_toUpperCase(std::string& input)
 ```
-Returns a copy of the input string in upper case
+Returns a copy of the *input* string in upper case
 
 #### spp_trimWhitespace()
 ```C++
 void spp_trimWhitespace(std::string& input)
 ```
-Returns a copy of the input string with leading and trailing whitespace trimmed
+Returns a copy of the *input* string with leading and trailing whitespace trimmed
