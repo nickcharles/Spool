@@ -2,14 +2,6 @@
 
 Spool is a lightweight and modular string manipulation library for C++. It seeks to replicate the greater string functionality provided by languages such as Java and Python. Stop wasting time rewriting the same old string functions for every new project.
 
-### Lightweight
-
-With the full Spool library weighing in at just over 300 lines, you get exactly what you need, and that's it.
-
-### Modular
-
-Only need one or two functions? Take them. Spool was built with this in mind, so every function is written entirely independent from the rest of the library.
-
 ### Documentation
 
 #### sp_contains()
