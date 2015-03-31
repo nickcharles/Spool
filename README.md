@@ -64,13 +64,13 @@ Returns true if the *input* string ends with *phrase*, ignores case
 ```C++
 bool spp_endsWithIgnoreCase(std::string& input, std::string& phrase, int offset)
 ```
-Returns true if the *input* string ends with *phrase* at *offset* from back
+Returns true if the *input* string ends with *phrase* at *offset* from back, ignores case
 
 #### spp_equalsIgnoreCase()
 ```C++
 bool spp_equalsIgnoreCase(const std::string& first, const std::string& second)
 ```
-Returns true if the strings *first* and *second* are the same, ignoring case
+Returns true if the strings *first* and *second* are the same, ignores case
 
 #### spp_replace()
 ```C++
