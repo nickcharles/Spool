@@ -1,24 +1,24 @@
 #include "spool.h"
 
 bool sp_contains(const std::string& input, const std::string& phrase) {
-    if (input.find(phrase) != std::string::npos) {
-        return true;
+    if (input.find(phrase) == std::string::npos) {
+        return false;
     }
-    return false;
+    return true;
 }
 
 bool sp_containsAfter(const std::string& input, const std::string& phrase, const std::size_t offset) {
-    if (input.find(phrase, offset) != std::string::npos) {
-        return true;
+    if (input.find(phrase, offset) == std::string::npos) {
+        return false;
     }
-    return false;
+    return true;
 }
 
 bool sp_containsBefore(const std::string& input, const std::string& phrase, const std::size_t offset) {
-    if (input.rfind(phrase, offset) != std::string::npos) {
-        return true;
+    if (input.rfind(phrase, offset) == std::string::npos) {
+        return false;
     }
-    return false;
+    return true;
 }
 
 bool sp_startsWith(const std::string& input, const std::string& phrase) {
@@ -108,7 +108,6 @@ bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, 
 
 bool sp_equalsIgnoreCase(const std::string& first, const std::string& second) {
     std::size_t first_size = first.size();
-    std::size_t second_size = second.size();
     for (std::size_t i = 0; i < first_size; ++i) {
         if (std::tolower(first[i]) != std::tolower(second[i])) {
             return false;
