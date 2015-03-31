@@ -24,7 +24,6 @@ bool spp_startsWith(const std::string& input, const std::string& phrase)
 ```
 > Returns true if the *input* string starts with *phrase*
 
-#### spp_startsWith()
 ```C++
 bool spp_startsWith(const std::string& input, const std::string& phrase, int offset)
 ```
