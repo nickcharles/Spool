@@ -10,6 +10,11 @@ bool sp_contains(const std::string& input, const std::string& phrase)
 ```
 > Returns true if the *input* string contains *phrase*
 
+```C++
+bool sp_contains(const std::string& input, const std::string& phrase, std::size_t offset)
+```
+> Returns true if the *input* string contains *phrase* beyond *offset*
+
 #### sp_startsWith()
 ```C++
 bool sp_startsWith(const std::string& input, const std::string& phrase)
