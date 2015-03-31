@@ -8,7 +8,10 @@
 bool sp_contains(const std::string& input, const std::string& phrase);
 
 // Returns true if input contains phrase beyond offset
-bool sp_contains(const std::string& input, const std::string& phrase, const std::size_t offset);
+bool sp_containsAfter(const std::string& input, const std::string& phrase, const std::size_t offset);
+
+// Returns true if input contains phrase after offset
+bool sp_containsBefore(const std::string& input, const std::string& phrase, const std::size_t offset);
 
 // Returns true if input starts with phrase
 bool sp_startsWith(const std::string& input, const std::string& phrase);

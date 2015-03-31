@@ -13,11 +13,19 @@ bool sp_contains(const std::string& input, const std::string& phrase)
 ```
 > Returns true if the *input* string contains *phrase*
 
-```C++
-bool sp_contains(const std::string& input, const std::string& phrase, const std::size_t offset)
-```
-> Returns true if the *input* string contains *phrase* beyond *offset*
 
+#### sp_containsAfter()
+```C++
+bool sp_containsAfter(const std::string& input, const std::string& phrase, const std::size_t offset)
+```
+> Returns true if the *input* string contains *phrase* at any point beyond *offset*
+
+
+#### sp_containsBefore()
+```C++
+bool sp_containsBefore(const std::string& input, const std::string& phrase, const std::size_t offset)
+```
+> Returns true if the *input* string contains *phrase* at any point up until *offset*
 
 #### sp_startsWith()
 ```C++

@@ -7,8 +7,15 @@ bool sp_contains(const std::string& input, const std::string& phrase) {
     return false;
 }
 
-bool sp_contains(const std::string& input, const std::string& phrase, const std::size_t offset) {
+bool sp_containsAfter(const std::string& input, const std::string& phrase, const std::size_t offset) {
     if (input.find(phrase, offset) != std::string::npos) {
+        return true;
+    }
+    return false;
+}
+
+bool sp_containsBefore(const std::string& input, const std::string& phrase, const std::size_t offset) {
+    if (input.rfind(phrase, offset) != std::string::npos) {
         return true;
     }
     return false;
