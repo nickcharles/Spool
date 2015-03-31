@@ -35,7 +35,6 @@ bool spp_startsWithIgnoreCase(std::string& input, std::string& phrase)
 ```
 > Returns true if the *input* string starts with *phrase*, ignores case
 
-#### spp_startsWithIgnoreCase()
 ```C++
 bool spp_startsWithIgnoreCase(std::string& input, std::string& phrase, int offset)
 ```
@@ -47,7 +46,6 @@ bool spp_endsWith(const std::string& input, const std::string& phrase)
 ```
 > Returns true if the *input* string ends with *phrase*
 
-#### spp_endsWith()
 ```C++
 bool spp_endsWith(const std::string& input, const std::string& phrase, int offset)
 ```
@@ -59,7 +57,6 @@ bool spp_endsWithIgnoreCase(std::string& input, std::string& phrase)
 ```
 > Returns true if the *input* string ends with *phrase*, ignores case
 
-#### spp_endsWithIgnoreCase()
 ```C++
 bool spp_endsWithIgnoreCase(std::string& input, std::string& phrase, int offset)
 ```
