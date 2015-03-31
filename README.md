@@ -4,7 +4,7 @@ StringPP is a lightweight and modular string manipulation library for C++. It se
 
 ### Lightweight
 
-- With the full String++ library weighing in at just over 300 lines, you get exactly what you need, and that's it.
+- With the full StringPP library weighing in at just over 300 lines, you get exactly what you need, and that's it.
 
 ### Modular
 
