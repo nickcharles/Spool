@@ -12,13 +12,13 @@ StringPP is a lightweight and modular string manipulation library for C++. It se
 
 ### Documentation
 
-##### spp_contains()
+#### spp_contains()
 ```C++
 bool spp_contains(const std::string& input, const std::string& phrase)
 ```
 Returns true if the input string contains phrase
 
-###### spp_startsWith()
+##### spp_startsWith()
 ```C++
 bool spp_startsWith(const std::string& input, const std::string& phrase)
 ```
