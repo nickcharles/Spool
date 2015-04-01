@@ -140,7 +140,15 @@ void sp_replaceLast(std::string& input, const std::string& old, const std::strin
     return;
 }
 
-void sp_tolowerCase(std::string& input) {
+void sp_substringBeforeChar(std:string& input, const std::string& character) {
+    return
+}
+
+void sp_substringAfterChar(std:string& input, const std::string& character) {
+    return;
+}
+
+void sp_toLowerCase(std::string& input) {
     std::size_t input_size = input.size();
     for (std::size_t i = 0; i < input_size; ++i) {
         input[i] = std::tolower(input[i]);

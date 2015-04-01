@@ -49,6 +49,10 @@ void sp_replaceFirst(std::string& input, const std::string& old, const std::stri
 // Returns a copy of input with last instance of old replaced with replacement
 void sp_replaceLast(std::string& input, const std::string& old, const std::string& replacement);
 
+void sp_substringBeforeChar(std:string& input, const std::string& character);
+
+void sp_substringAfterChar(std:string& input, const std::string& character);
+
 // Returns a copy of the string in lower case
 void sp_toLowerCase(std::string& input);
 

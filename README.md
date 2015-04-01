@@ -100,6 +100,7 @@ bool sp_equalsIgnoreCase(const std::string& first, const std::string& second)
 
 
 #### sp_replace()
+##### Not yet implemented
 ```C++
 void sp_replace(std::string& input, const std::string& old, const std::string& replacement)
 ```
@@ -107,6 +108,7 @@ void sp_replace(std::string& input, const std::string& old, const std::string& r
 
 
 #### sp_replaceFirst()
+##### Not yet implemented
 ```C++
 void sp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement)
 ```
@@ -114,10 +116,27 @@ void sp_replaceFirst(std::string& input, const std::string& old, const std::stri
 
 
 #### sp_replaceLast()
+##### Not yet implemented
 ```C++
 void sp_replaceLast(std::string& input, const std::string& old, const std::string& replacement)
 ```
 > Returns a copy of the *input* string with the last instance of *old* replaced with *replacement*
+
+
+#### sp_substringBeforeChar()
+##### Not yet implemented
+```C++
+void sp_substringBeforeChar(std:string& input, const std::string& character);
+```
+> Returns a substring of the *input* string, starting at the beginning and going up until the first instance of *character*
+
+
+#### sp_substringAfterChar()
+##### Not yet implemented
+```C++
+void sp_substringAfterChar(std:string& input, const std::string& character);
+```
+> Returns a substring of the *input* string, starting just after the last instance of *character* and going until the end
 
 
 #### sp_toLowerCase()
