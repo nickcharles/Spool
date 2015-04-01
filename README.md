@@ -128,7 +128,7 @@ void sp_replaceLast(std::string& input, const std::string& old, const std::strin
 ```C++
 void sp_substringBeforeChar(std:string& input, const std::string& character);
 ```
-> Returns a substring of the *input* string, starting at the beginning and going up until the first instance of *character*
+> Returns a substring of the *input* string, starting at the beginning of *input* and going up until the first instance of *character*
 
 
 #### sp_substringAfterChar()
@@ -136,7 +136,7 @@ void sp_substringBeforeChar(std:string& input, const std::string& character);
 ```C++
 void sp_substringAfterChar(std:string& input, const std::string& character);
 ```
-> Returns a substring of the *input* string, starting just after the last instance of *character* and going until the end
+> Returns a substring of the *input* string, starting just after the last instance of *character* and going until the end of *input*
 
 
 #### sp_toLowerCase()
