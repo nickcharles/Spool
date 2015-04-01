@@ -2,7 +2,7 @@
     <img height="200" width="200" src="https://github.com/nickcharles/Spool/blob/master/spool.png">
 </p>
 
-## Spool 
+## Spool
 
 Spool is a lightweight and modular string manipulation library for C++. It seeks to replicate the greater string functionality provided by languages such as Java and Python. Stop wasting time rewriting the same old string functions for every new project.
 
@@ -99,6 +99,53 @@ bool sp_equalsIgnoreCase(const std::string& first, const std::string& second)
 > Returns true if the strings *first* and *second* are the same, ignores case
 
 
+#### sp_isAlnum()
+##### Not yet implemented
+```C++
+bool sp_isAlnum(const std::string& input)
+```
+> Returns true if all characters in the string are alphanumeric and there is at least one character
+
+
+#### sp_isAlpha()
+##### Not yet implemented
+```C++
+bool sp_isAlpha(const std::string& input)
+```
+> Returns true if all characters in the string are alphabetic and there is at least one character
+
+
+#### sp_isDigit()
+##### Not yet implemented
+```C++
+bool sp_isDigit(const std::string& input)
+```
+> Returns true if all characters in the string are digits and there is at least one character
+
+#### sp_isLower()
+##### Not yet implemented
+```C++
+bool sp_isLower(const std::string& input)
+```
+> Returns true if all characters in the string are lowercase and there is at least one character
+
+
+#### sp_isUpper()
+##### Not yet implemented
+```C++
+bool sp_isUpper(const std::string& input)
+```
+> Returns true if all characters in the string are uppercase and there is at least one character
+
+
+#### sp_isSpace()
+##### Not yet implemented
+```C++
+bool sp_isLower(const std::string& input)
+```
+> Returns true if all characters in the string are whitespaces and there is at least one character
+
+
 #### sp_replace()
 ##### Not yet implemented
 ```C++
@@ -143,14 +190,30 @@ void sp_substringAfterChar(std:string& input, const std::string& character);
 ```C++
 void sp_toLowerCase(std::string& input)
 ```
-> Returns a copy of the *input* string in lower case
+> Returns a copy of the *input* string in lowercase
 
 
 #### sp_toUpperCase()
 ```C++
 void sp_toUpperCase(std::string& input)
 ```
-> Returns a copy of the *input* string in upper case
+> Returns a copy of the *input* string in uppercase
+
+
+#### sp_capitalize()
+##### Not yet implemented
+```C++
+void sp_capitalize(std::string& input)
+```
+> Returns a copy of the *input* string with the first character capitalized and the rest lowercased
+
+
+#### sp_swapCase()
+##### Not yet implemented
+```C++
+void sp_swapCase(std::string& input)
+```
+> Returns a copy of the *input* string with uppercase characters converted to lowercase and vice versa
 
 
 #### sp_trimWhitespace()
@@ -158,3 +221,31 @@ void sp_toUpperCase(std::string& input)
 void sp_trimWhitespace(std::string& input)
 ```
 > Returns a copy of the *input* string with leading and trailing whitespace trimmed
+
+#### sp_trimWhitespaceLeft()
+##### Not yet implemented
+```C++
+void sp_trimWhitespaceLeft(std::string& input)
+```
+> Returns a copy of the *input* string with leading whitespace trimmed
+
+#### sp_trimWhitespaceRight()
+##### Not yet implemented
+```C++
+void sp_trimWhitespaceRight(std::string& input)
+```
+> Returns a copy of the *input* string with trailing whitespace trimmed
+
+#### sp_quote()
+##### Not yet implemented
+```C++
+void sp_quote(std::string& input)
+```
+> Returns a copy of the *input* string surrounded by double quotes
+
+#### sp_repeat()
+##### Not yet implemented
+```C++
+void sp_repeat(std::string& input, unsigned int count)
+```
+> Returns a string consisting of the *input* string repeated *count* times
