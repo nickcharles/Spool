@@ -16,12 +16,18 @@ Spool is a lightweight and modular string manipulation library for C++. It seeks
 - [sp_endsWith](https://github.com/nickcharles/Spool#sp_endswith)
 - [sp_endsWithIgnoreCase](https://github.com/nickcharles/Spool#sp_endswithignorecase)
 - [sp_equalsIgnoreCase](https://github.com/nickcharles/Spool#sp_equalsignorecase)
-- [sp_replace](https://github.com/nickcharles/Spool#sp_replace)
-- [sp_replaceFirst](https://github.com/nickcharles/Spool#sp_replacefirst)
-- [sp_replaceLast](https://github.com/nickcharles/Spool#sp_replacelast)
+- [sp_isAlnum](https://github.com/nickcharles/Spool#sp_isalnum)
+- [sp_isAlpha](https://github.com/nickcharles/Spool#sp_isalpha)
+- [sp_isDigit](https://github.com/nickcharles/Spool#sp_isdigit)
+- [sp_isLower](https://github.com/nickcharles/Spool#sp_islower)
+- [sp_isUpper](https://github.com/nickcharles/Spool#sp_isupper)
 - [sp_toLowerCase](https://github.com/nickcharles/Spool#sp_tolowercase)
 - [sp_toUpperCase](https://github.com/nickcharles/Spool#sp_touppercase)
 - [sp_trimWhitespace](https://github.com/nickcharles/Spool#sp_trimwhitespace)
+- [sp_trimWhitespaceLeft](https://github.com/nickcharles/Spool#sp_trimwhitespaceleft)
+- [sp_trimWhitespaceRight](https://github.com/nickcharles/Spool#sp_trimwhitespaceright)
+- [sp_quote](https://github.com/nickcharles/Spool#sp_quote)
+- [sp_repeat](https://github.com/nickcharles/Spool#sp_repeat)
 
 
 #### sp_contains()
@@ -33,16 +39,17 @@ bool sp_contains(const std::string& input, const std::string& phrase)
 
 #### sp_containsAfter()
 ```C++
-bool sp_containsAfter(const std::string& input, const std::string& phrase, const std::size_t offset)
+bool sp_containsAfter(const std::string& input, const std::string& phrase, std::size_t offset)
 ```
 > Returns true if the *input* string contains *phrase* at any point beyond *offset*
 
 
 #### sp_containsBefore()
 ```C++
-bool sp_containsBefore(const std::string& input, const std::string& phrase, const std::size_t offset)
+bool sp_containsBefore(const std::string& input, const std::string& phrase, std::size_t offset)
 ```
 > Returns true if the *input* string contains *phrase* at any point up until *offset*
+
 
 #### sp_startsWith()
 ```C++
@@ -51,7 +58,7 @@ bool sp_startsWith(const std::string& input, const std::string& phrase)
 > Returns true if the *input* string starts with *phrase*
 
 ```C++
-bool sp_startsWith(const std::string& input, const std::string& phrase, const std::size_t offset)
+bool sp_startsWith(const std::string& input, const std::string& phrase, std::size_t offset)
 ```
 > Returns true if the *input* string starts with *phrase* at *offset*
 
@@ -63,7 +70,7 @@ bool sp_startsWithIgnoreCase(std::string& input, std::string& phrase)
 > Returns true if the *input* string starts with *phrase*, ignores case
 
 ```C++
-bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, const std::size_t offset)
+bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset)
 ```
 > Returns true if the *input* string starts with *phrase* at *offset*, ignores case
 
@@ -75,7 +82,7 @@ bool sp_endsWith(const std::string& input, const std::string& phrase)
 > Returns true if the *input* string ends with *phrase*
 
 ```C++
-bool sp_endsWith(const std::string& input, const std::string& phrase, const std::size_t offset)
+bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_t offset)
 ```
 > Returns true if the *input* string ends with *phrase* at *offset* from back
 
@@ -87,7 +94,7 @@ bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase)
 > Returns true if the *input* string ends with *phrase*, ignores case
 
 ```C++
-bool sp_endsWithIgnoreCase(std::string& input, std::string& phrase, const std::size_t offset)
+bool sp_endsWithIgnoreCase(std::string& input, std::string& phrase, std::size_t offset)
 ```
 > Returns true if the *input* string ends with *phrase* at *offset* from back, ignores case
 
@@ -100,7 +107,6 @@ bool sp_equalsIgnoreCase(const std::string& first, const std::string& second)
 
 
 #### sp_isAlnum()
-##### Not yet implemented
 ```C++
 bool sp_isAlnum(const std::string& input)
 ```
@@ -108,7 +114,6 @@ bool sp_isAlnum(const std::string& input)
 
 
 #### sp_isAlpha()
-##### Not yet implemented
 ```C++
 bool sp_isAlpha(const std::string& input)
 ```
@@ -116,14 +121,12 @@ bool sp_isAlpha(const std::string& input)
 
 
 #### sp_isDigit()
-##### Not yet implemented
 ```C++
 bool sp_isDigit(const std::string& input)
 ```
 > Returns true if all characters in the string are digits and there is at least one character
 
 #### sp_isLower()
-##### Not yet implemented
 ```C++
 bool sp_isLower(const std::string& input)
 ```
@@ -131,7 +134,6 @@ bool sp_isLower(const std::string& input)
 
 
 #### sp_isUpper()
-##### Not yet implemented
 ```C++
 bool sp_isUpper(const std::string& input)
 ```
@@ -139,17 +141,16 @@ bool sp_isUpper(const std::string& input)
 
 
 #### sp_isSpace()
-##### Not yet implemented
 ```C++
 bool sp_isLower(const std::string& input)
 ```
 > Returns true if all characters in the string are whitespaces and there is at least one character
 
 
-#### sp_replace()
+<!-- #### sp_replace()
 ##### Not yet implemented
 ```C++
-void sp_replace(std::string& input, const std::string& old, const std::string& replacement)
+std::string sp_replace(std::string& input, const std::string& old, const std::string& replacement)
 ```
 > Returns a copy of the *input* string with every instance of *old* replaced with *replacement*
 
@@ -157,7 +158,7 @@ void sp_replace(std::string& input, const std::string& old, const std::string& r
 #### sp_replaceFirst()
 ##### Not yet implemented
 ```C++
-void sp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement)
+std::string sp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement)
 ```
 > Returns a copy of the *input* string with the first instance of *old* replaced with *replacement*
 
@@ -165,7 +166,7 @@ void sp_replaceFirst(std::string& input, const std::string& old, const std::stri
 #### sp_replaceLast()
 ##### Not yet implemented
 ```C++
-void sp_replaceLast(std::string& input, const std::string& old, const std::string& replacement)
+std::string sp_replaceLast(std::string& input, const std::string& old, const std::string& replacement)
 ```
 > Returns a copy of the *input* string with the last instance of *old* replaced with *replacement*
 
@@ -173,7 +174,7 @@ void sp_replaceLast(std::string& input, const std::string& old, const std::strin
 #### sp_substringBeforeChar()
 ##### Not yet implemented
 ```C++
-void sp_substringBeforeChar(std:string& input, const std::string& character);
+std::string sp_substringBeforeChar(std:string& input, const std::string& character);
 ```
 > Returns a substring of the *input* string, starting at the beginning of *input* and going up until the first instance of *character*
 
@@ -181,71 +182,69 @@ void sp_substringBeforeChar(std:string& input, const std::string& character);
 #### sp_substringAfterChar()
 ##### Not yet implemented
 ```C++
-void sp_substringAfterChar(std:string& input, const std::string& character);
+std::string sp_substringAfterChar(std:string& input, const std::string& character);
 ```
-> Returns a substring of the *input* string, starting just after the last instance of *character* and going until the end of *input*
+> Returns a substring of the *input* string, starting just after the last instance of *character* and going until the end of *input* -->
 
 
 #### sp_toLowerCase()
 ```C++
-void sp_toLowerCase(std::string& input)
+std::string sp_toLowerCase(std::string input)
 ```
 > Returns a copy of the *input* string in lowercase
 
 
 #### sp_toUpperCase()
 ```C++
-void sp_toUpperCase(std::string& input)
+std::string sp_toUpperCase(std::string input)
 ```
 > Returns a copy of the *input* string in uppercase
 
 
 #### sp_capitalize()
-##### Not yet implemented
 ```C++
-void sp_capitalize(std::string& input)
+std::string sp_capitalize(std::string input)
 ```
 > Returns a copy of the *input* string with the first character capitalized and the rest lowercased
 
 
 #### sp_swapCase()
-##### Not yet implemented
 ```C++
-void sp_swapCase(std::string& input)
+std::string sp_swapCase(std::string input)
 ```
 > Returns a copy of the *input* string with uppercase characters converted to lowercase and vice versa
 
 
 #### sp_trimWhitespace()
 ```C++
-void sp_trimWhitespace(std::string& input)
+std::string sp_trimWhitespace(const std::string& input)
 ```
 > Returns a copy of the *input* string with leading and trailing whitespace trimmed
 
+
 #### sp_trimWhitespaceLeft()
-##### Not yet implemented
 ```C++
-void sp_trimWhitespaceLeft(std::string& input)
+std::string sp_trimWhitespaceLeft(const std::string& input)
 ```
 > Returns a copy of the *input* string with leading whitespace trimmed
 
+
 #### sp_trimWhitespaceRight()
-##### Not yet implemented
 ```C++
-void sp_trimWhitespaceRight(std::string& input)
+std::string sp_trimWhitespaceRight(const std::string& input)
 ```
 > Returns a copy of the *input* string with trailing whitespace trimmed
 
+
 #### sp_quote()
-##### Not yet implemented
 ```C++
-void sp_quote(std::string& input)
+std::string sp_quote(std::string input)
 ```
 > Returns a copy of the *input* string surrounded by double quotes
 
+
 #### sp_repeat()
-##### Not yet implemented
 ```C++
-void sp_repeat(std::string& input, unsigned int count)
+std::string sp_repeat(std::string input, unsigned int count)
 ```
 > Returns a string consisting of the *input* string repeated *count* times

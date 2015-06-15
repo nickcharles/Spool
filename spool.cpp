@@ -7,14 +7,14 @@ bool sp_contains(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool sp_containsAfter(const std::string& input, const std::string& phrase, const std::size_t offset) {
+bool sp_containsAfter(const std::string& input, const std::string& phrase, std::size_t offset) {
     if (input.find(phrase, offset) == std::string::npos) {
         return false;
     }
     return true;
 }
 
-bool sp_containsBefore(const std::string& input, const std::string& phrase, const std::size_t offset) {
+bool sp_containsBefore(const std::string& input, const std::string& phrase, std::size_t offset) {
     if (input.rfind(phrase, offset) == std::string::npos) {
         return false;
     }
@@ -22,8 +22,10 @@ bool sp_containsBefore(const std::string& input, const std::string& phrase, cons
 }
 
 bool sp_startsWith(const std::string& input, const std::string& phrase) {
-    std::size_t phrase_size = phrase.size();
-    for (std::size_t i = 0; i < phrase_size; ++i) {
+    if (phrase.size() > input.size()) {
+        return false;
+    }
+    for (std::size_t i = 0; i < phrase.size(); ++i) {
         if (input[i] != phrase[i]) {
             return false;
         }
@@ -31,9 +33,11 @@ bool sp_startsWith(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool sp_startsWith(const std::string& input, const std::string& phrase, const std::size_t offset) {
-    std::size_t phrase_size = phrase.size();
-    for (std::size_t  i = 0; i < phrase_size; ++i) {
+bool sp_startsWith(const std::string& input, const std::string& phrase, std::size_t offset) {
+    if (phrase.size() > input.size() - offset) {
+        return false;
+    }
+    for (std::size_t  i = 0; i < phrase.size(); ++i) {
         if (input[offset + i] != phrase[i]) {
             return false;
         }
@@ -42,19 +46,23 @@ bool sp_startsWith(const std::string& input, const std::string& phrase, const st
 }
 
 bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase) {
-    std::size_t phrase_size = phrase.size();
-    for (std::size_t i = 0; i < phrase_size; ++i) {
-        if (std::tolower(input[i]) != std::tolower(phrase[i])) {
+    if (phrase.size() > input.size()) {
+        return false;
+    }
+    for (std::size_t i = 0; i < phrase.size(); ++i) {
+        if (tolower(input[i]) != tolower(phrase[i])) {
             return false;
         }
     }
     return true;
 }
 
-bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, const std::size_t offset) {
-    std::size_t phrase_size = phrase.size();
-    for (std::size_t  i = 0; i < phrase_size; ++i) {
-        if (std::tolower(input[offset + i]) != std::tolower(phrase[i])) {
+bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset) {
+    if (phrase.size() > input.size() - offset) {
+        return false;
+    }
+    for (std::size_t  i = 0; i < phrase.size(); ++i) {
+        if (tolower(input[offset + i]) != tolower(phrase[i])) {
             return false;
         }
     }
@@ -62,21 +70,23 @@ bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase
 }
 
 bool sp_endsWith(const std::string& input, const std::string& phrase) {
-    std::size_t input_size = input.size();
-    std::size_t phrase_size = phrase.size();
-    for (std::size_t i = 0; i < phrase_size; ++i) {
-        if (input[input_size - i] != phrase[phrase_size - i]) {
+    if (phrase.size() > input.size()) {
+        return false;
+    }
+    for (std::size_t i = 0; i < phrase.size(); ++i) {
+        if (input[input.size() - i] != phrase[phrase.size() - i]) {
             return false;
         }
     }
     return true;
 }
 
-bool sp_endsWith(const std::string& input, const std::string& phrase, const std::size_t offset) {
-    std::size_t input_size = input.size();
-    std::size_t phrase_size = phrase.size();
-    for (std::size_t i = 0; i < phrase_size; ++i) {
-        if (input[input_size - offset - i] != phrase[phrase_size - i]) {
+bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_t offset) {
+    if (phrase.size() > input.size() - offset) {
+        return false;
+    }
+    for (std::size_t i = 0; i < phrase.size(); ++i) {
+        if (input[input.size() - offset - i] != phrase[phrase.size() - i]) {
             return false;
         }
     }
@@ -84,21 +94,23 @@ bool sp_endsWith(const std::string& input, const std::string& phrase, const std:
 }
 
 bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase) {
-    std::size_t input_size = input.size();
-    std::size_t phrase_size = phrase.size();
-    for (std::size_t i = 0; i < phrase_size; ++i) {
-        if (std::tolower(input[input_size - i]) != std::tolower(phrase[phrase_size - i])) {
+    if (phrase.size() > input.size()) {
+        return false;
+    }
+    for (std::size_t i = 0; i < phrase.size(); ++i) {
+        if (tolower(input[input.size() - i]) != tolower(phrase[phrase.size() - i])) {
             return false;
         }
     }
     return true;
 }
 
-bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, const std::size_t offset) {
-    std::size_t input_size = input.size();
-    std::size_t phrase_size = phrase.size();
-    for (std::size_t i = 0; i < phrase_size; ++i) {
-        if (std::tolower(input[input_size - offset - i]) != std::tolower(phrase[phrase_size - i])) {
+bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset) {
+    if (phrase.size() > input.size() - offset) {
+        return false;
+    }
+    for (std::size_t i = 0; i < phrase.size(); ++i) {
+        if (tolower(input[input.size() - offset - i]) != tolower(phrase[phrase.size() - i])) {
             return false;
         }
     }
@@ -107,70 +119,193 @@ bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, 
 
 
 bool sp_equalsIgnoreCase(const std::string& first, const std::string& second) {
-    std::size_t first_size = first.size();
-    for (std::size_t i = 0; i < first_size; ++i) {
-        if (std::tolower(first[i]) != std::tolower(second[i])) {
+    if (first.size() != second.size()) {
+        return false;
+    }
+    for (std::size_t i = 0; i < first.size(); ++i) {
+        if (tolower(first[i]) != tolower(second[i])) {
             return false;
         }
     }
     return true;
 }
 
-void sp_replace(std::string& input, const std::string& old, const std::string& replacement) {
-    std::size_t old_start_index;
-    std::size_t old_end_index;
-    std::size_t input_size = input.size();
-    std::size_t old_size = input.size();
-    std::size_t replacement_size = replacement.size();
-    for (std::size_t i = 0; i < input_size; ++i) {
-        if (input[i] == old[0]) {
-            old_start_index = i;
-            for (std::size_t j = 0; j < old_size; ++j) {
-            }
+bool sp_isAlnum(const std::string& input) {
+    if (input.empty()) {
+        return false;
+    }
+    for (std::size_t i = 0; i < input.size(); ++i) {
+        if (!isalnum(input[i])) {
+            return false;
         }
     }
-    return;
+    return true;
 }
 
-void sp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement) {
-    return;
-}
-
-void sp_replaceLast(std::string& input, const std::string& old, const std::string& replacement) {
-    return;
-}
-
-void sp_substringBeforeChar(std:string& input, const std::string& character) {
-    return
-}
-
-void sp_substringAfterChar(std:string& input, const std::string& character) {
-    return;
-}
-
-void sp_toLowerCase(std::string& input) {
-    std::size_t input_size = input.size();
-    for (std::size_t i = 0; i < input_size; ++i) {
-        input[i] = std::tolower(input[i]);
+bool sp_isAlpha(const std::string& input) {
+    if (input.empty()) {
+        return false;
     }
-    return;
+    for (std::size_t i = 0; i < input.size(); ++i) {
+        if (!isalpha(input[i])) {
+            return false;
+        }
+    }
+    return true;
 }
 
-void sp_toUpperCase(std::string& input) {
-    std::size_t input_size = input.size();
-    for (std::size_t i = 0; i < input_size; ++i) {
-        input[i] = std::toupper(input[i]);
+bool sp_isDigit(const std::string& input) {
+    if (input.empty()) {
+        return false;
     }
-    return;
+    for (std::size_t i = 0; i < input.size(); ++i) {
+        if (!isdigit(input[i])) {
+            return false;
+        }
+    }
+    return true;
 }
 
-void sp_trimWhitespace(std::string& input) {
-    std::size_t input_size = input.size();
-    for (std::size_t i = 0; i < input_size; ++i) {
-        input[i] = std::toupper(input[i]);
+bool sp_isLower(const std::string& input) {
+    if (input.empty()) {
+        return false;
     }
-    for (std::size_t i = 0; i < input_size; ++i) {
-        input[i] = std::toupper(input[i]);
+    for (std::size_t i = 0; i < input.size(); ++i) {
+        if (!islower(input[i])) {
+            return false;
+        }
     }
-    return;
+    return true;
+}
+
+bool sp_isUpper(const std::string& input) {
+    if (input.empty()) {
+        return false;
+    }
+    for (std::size_t i = 0; i < input.size(); ++i) {
+        if (!isupper(input[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// std::string sp_replaceHelper(std::string input, const std::string& replacement, std::size_t start, std::size_t end) {
+//     for (std::size_t i = 0; i < replacement.size(); ++i) {
+//         input[start + i]
+//     }
+//     return input;
+// }
+
+// std::string sp_replace(std::string input, const std::string& to_replace, const std::string& replacement) {
+//     std::size_t to_replace_start_index;
+//     std::size_t to_replace_end_index;
+//     for (std::size_t i = 0; i < input.size(); ++i) {
+//         if (input[i] == to_replace[0]) {
+//             to_replace_start_index = i;
+//             for (std::size_t j = 0; j < to_replace.size(); ++j) {
+//                 if (input[i + j] != to_replace[j]) {
+//                     break;
+//                 }
+//             }
+//             if (j != to_replace.size()) {
+//                 continue;
+//             }
+//             else {
+//                 input = sp_replaceHelper(input, replacement, to_replace_start_index, to_replace.size() - 1)
+//             }
+//         }
+//     }
+//     return input;
+// }
+
+// std::string sp_replaceFirst(std::string input, const std::string& to_replace, const std::string& replacement) {
+//     return input;
+// }
+
+// std::string sp_replaceLast(std::string input, const std::string& to_replace, const std::string& replacement) {
+//     return input;
+// }
+
+// std::string sp_substringBeforeIndex(std:string input, const std::string& character) {
+//     return input;
+// }
+
+// std::string sp_substringAfterIndex(std:string input, const std::string& character) {
+//     return input;
+// }
+
+std::string sp_toLowerCase(std::string input) {
+    for (std::size_t i = 0; i < input.size(); ++i) {
+        input[i] = tolower(input[i]);
+    }
+    return input;
+}
+
+std::string sp_toUpperCase(std::string input) {
+    for (std::size_t i = 0; i < input.size(); ++i) {
+        input[i] = toupper(input[i]);
+    }
+    return input;
+}
+
+std::string sp_capitalize(std::string input) {
+    input[0] = toupper(input[0]);
+    return input;
+}
+
+std::string sp_swapCase(std::string input) {
+    for (std::size_t i = 0; i < input.size(); ++i) {
+        if (input[i] == tolower(input[i])) {
+            input[i] = toupper(input[i]);
+        }
+        else if (input[i] == toupper(input[i])) {
+            input[i] = tolower(input[i]);
+        }
+    }
+    return input;
+}
+
+std::string sp_trimWhitespace(const std::string& input) {
+    std::size_t i = 0;
+    std::size_t j = input.size() - 1;
+    while (isspace(input[i])) ++i;
+    if (i == input.size()) {
+        return "";
+    }
+    while (isspace(input[j])) --j;
+    return input.substr(i, j-i);
+}
+
+std::string sp_trimWhitespaceLeft(const std::string& input) {
+    std::size_t i = 0;
+    while (isspace(input[i])) ++i;
+    if (i == input.size()) {
+        return "";
+    }
+    return input.substr(i, std::string::npos);
+}
+
+std::string sp_trimWhitespaceRight(const std::string& input) {
+    std::size_t i = input.size() - 1;
+    while (isspace(input[i])) {
+        if (i == 0) {
+            return "";
+        }
+        --i;
+    }
+    return input.substr(0, i);
+}
+
+std::string sp_quote(std::string input) {
+    input.insert(0, "\"");
+    input.append("\"");
+    return input;
+}
+
+std::string sp_repeat(std::string input, unsigned int count) {
+    for (unsigned int i; i < count; ++i) {
+        input.append(input);
+    }
+    return input;
 }
