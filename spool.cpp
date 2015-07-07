@@ -1,4 +1,4 @@
-#include "spool.h"
+#include "spool.hpp"
 
 bool sp_contains(const std::string& input, const std::string& phrase) {
     if (input.find(phrase) == std::string::npos) {
