@@ -21,8 +21,14 @@ Spool is a lightweight and modular string manipulation library for C++. It seeks
 - [sp_isDigit](https://github.com/nickcharles/Spool#sp_isdigit)
 - [sp_isLower](https://github.com/nickcharles/Spool#sp_islower)
 - [sp_isUpper](https://github.com/nickcharles/Spool#sp_isupper)
+- [sp_isSpace](https://github.com/nickcharles/Spool#sp_isspace)
+- [sp_replace](https://github.com/nickcharles/Spool#sp_replace)
+- [sp_replaceFirst](https://github.com/nickcharles/Spool#sp_replacefirst)
+- [sp_replaceLast](https://github.com/nickcharles/Spool#sp_replacelast)
 - [sp_toLowerCase](https://github.com/nickcharles/Spool#sp_tolowercase)
 - [sp_toUpperCase](https://github.com/nickcharles/Spool#sp_touppercase)
+- [sp_capitalize](https://github.com/nickcharles/Spool#sp_capitalize)
+- [sp_swapCase](https://github.com/nickcharles/Spool#sp_swapcase)
 - [sp_trimWhitespace](https://github.com/nickcharles/Spool#sp_trimwhitespace)
 - [sp_trimWhitespaceLeft](https://github.com/nickcharles/Spool#sp_trimwhitespaceleft)
 - [sp_trimWhitespaceRight](https://github.com/nickcharles/Spool#sp_trimwhitespaceright)
@@ -148,36 +154,34 @@ bool sp_isLower(const std::string& input)
 > Returns true if all characters in the string are whitespaces and there is at least one character
 
 
-<!-- #### sp_replace()
-##### Not yet implemented
+#### sp_replace()
 ```C++
-std::string sp_replace(std::string& input, const std::string& old, const std::string& replacement)
+std::string sp_replace(std::string input, const std::string& target, const std::string& replacement)
 ```
-> Returns a copy of the *input* string with every instance of *old* replaced with *replacement*
+> Returns a copy of the *input* string with every instance of *target* replaced with *replacement*
 
 
 #### sp_replaceFirst()
-##### Not yet implemented
 ```C++
-std::string sp_replaceFirst(std::string& input, const std::string& old, const std::string& replacement)
+std::string sp_replaceFirst(std::string input, const std::string& target, const std::string& replacement)
 ```
-> Returns a copy of the *input* string with the first instance of *old* replaced with *replacement*
+> Returns a copy of the *input* string with the first instance of *target* replaced with *replacement*
 
 
 #### sp_replaceLast()
-##### Not yet implemented
 ```C++
-std::string sp_replaceLast(std::string& input, const std::string& old, const std::string& replacement)
+std::string sp_replaceLast(std::string input, const std::string& target, const std::string& replacement)
 ```
-> Returns a copy of the *input* string with the last instance of *old* replaced with *replacement*
+> Returns a copy of the *input* string with the last instance of *target* replaced with *replacement*
 
 
+<!--
 #### sp_substringBeforeChar()
 ##### Not yet implemented
 ```C++
 std::string sp_substringBeforeChar(std:string& input, const std::string& character);
 ```
-> Returns a substring of the *input* string, starting at the beginning of *input* and going up until the first instance of *character*
+> Returns a substring of the *input* string starting at the beginning of *input* and going up until the first instance of *character*
 
 
 #### sp_substringAfterChar()
@@ -185,7 +189,8 @@ std::string sp_substringBeforeChar(std:string& input, const std::string& charact
 ```C++
 std::string sp_substringAfterChar(std:string& input, const std::string& character);
 ```
-> Returns a substring of the *input* string, starting just after the last instance of *character* and going until the end of *input* -->
+> Returns a substring of the *input* string,starting just after the last instance of *character* and going until the end of *input* 
+-->
 
 
 #### sp_toLowerCase()

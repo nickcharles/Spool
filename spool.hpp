@@ -39,13 +39,11 @@ bool sp_isLower(const std::string& input);
 
 bool sp_isUpper(const std::string& input);
 
-// std::string sp_replaceHelper(std::string input, const std::string& replacement, std::size_t start, std::size_t end);
+std::string sp_replace(std::string input, const std::string& target, const std::string& replacement);
 
-// std::string sp_replace(const std::string& input, const std::string& old, const std::string& replacement);
+std::string sp_replaceFirst(std::string input, const std::string& target, const std::string& replacement);
 
-// std::string sp_replaceFirst(const std::string& input, const std::string& old, const std::string& replacement);
-
-// std::string sp_replaceLast(const std::string& input, const std::string& old, const std::string& replacement);
+std::string sp_replaceLast(std::string input, const std::string& target, const std::string& replacement);
 
 // std::string sp_substringBeforeIndex();
 

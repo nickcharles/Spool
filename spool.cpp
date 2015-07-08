@@ -190,42 +190,31 @@ bool sp_isUpper(const std::string& input) {
     return true;
 }
 
-// std::string sp_replaceHelper(std::string input, const std::string& replacement, std::size_t start, std::size_t end) {
-//     for (std::size_t i = 0; i < replacement.size(); ++i) {
-//         input[start + i]
-//     }
-//     return input;
-// }
+std::string sp_replace(std::string input, const std::string& target, const std::string& replacement) {
+    if (target.size() > input.size()) {
+        return input;
+    }
+    std::size_t pos = input.find(target);
+    while (pos != std::string::npos) {
+        input = input.replace(pos, target.size(), replacement);
+        pos = input.find(target);
+    }
+    return input;
+}
 
-// std::string sp_replace(std::string input, const std::string& to_replace, const std::string& replacement) {
-//     std::size_t to_replace_start_index;
-//     std::size_t to_replace_end_index;
-//     for (std::size_t i = 0; i < input.size(); ++i) {
-//         if (input[i] == to_replace[0]) {
-//             to_replace_start_index = i;
-//             for (std::size_t j = 0; j < to_replace.size(); ++j) {
-//                 if (input[i + j] != to_replace[j]) {
-//                     break;
-//                 }
-//             }
-//             if (j != to_replace.size()) {
-//                 continue;
-//             }
-//             else {
-//                 input = sp_replaceHelper(input, replacement, to_replace_start_index, to_replace.size() - 1)
-//             }
-//         }
-//     }
-//     return input;
-// }
+std::string sp_replaceFirst(std::string input, const std::string& target, const std::string& replacement) {
+    if (target.size() > input.size()) {
+        return input;
+    }
+    return input.replace(input.find(target), target.size(), replacement);
+}
 
-// std::string sp_replaceFirst(std::string input, const std::string& to_replace, const std::string& replacement) {
-//     return input;
-// }
-
-// std::string sp_replaceLast(std::string input, const std::string& to_replace, const std::string& replacement) {
-//     return input;
-// }
+std::string sp_replaceLast(std::string input, const std::string& target, const std::string& replacement) {
+    if (target.size() > input.size()) {
+        return input;
+    }
+    return input.replace(input.rfind(target), target.size(), replacement);
+}
 
 // std::string sp_substringBeforeIndex(std:string input, const std::string& character) {
 //     return input;
