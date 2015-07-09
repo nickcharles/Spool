@@ -216,13 +216,21 @@ std::string sp_replaceLast(std::string input, const std::string& target, const s
     return input.replace(input.rfind(target), target.size(), replacement);
 }
 
-// std::string sp_substringBeforeIndex(std:string input, const std::string& character) {
-//     return input;
-// }
+std::string sp_substringBeforeChar(const std:string& input, const std::string& character) {
+    std::size_t pos = input.find(character);
+    if (pos == std::string::npos) {
+        return input;
+    }
+    return input.substr(0, pos + 1);
+}
 
-// std::string sp_substringAfterIndex(std:string input, const std::string& character) {
-//     return input;
-// }
+std::string sp_substringAfterChar(const std:string& input, const std::string& character) {
+    std::size_t pos = input.rfind(character);
+    if (pos == std::string::npos) {
+        return input;
+    }
+    return input.substr(pos, std::string:npos);
+}
 
 std::string sp_toLowerCase(std::string input) {
     for (std::size_t i = 0; i < input.size(); ++i) {

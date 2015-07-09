@@ -45,13 +45,9 @@ std::string sp_replaceFirst(std::string input, const std::string& target, const 
 
 std::string sp_replaceLast(std::string input, const std::string& target, const std::string& replacement);
 
-// std::string sp_substringBeforeIndex();
+std::string sp_substringBeforeChar(const std:string& input, const std::string& character);
 
-// std::string sp_substringAfterIndex();
-
-// std::string sp_substringBeforeChar(const std:string& input, const std::string& character);
-
-// std::string sp_substringAfterChar(const std:string& input, const std::string& character);
+std::string sp_substringAfterChar(const std:string& input, const std::string& character);
 
 std::string sp_toLowerCase(std::string input);
 

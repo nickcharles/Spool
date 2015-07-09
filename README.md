@@ -25,6 +25,8 @@ Spool is a lightweight and modular string manipulation library for C++. It seeks
 - [sp_replace](https://github.com/nickcharles/Spool#sp_replace)
 - [sp_replaceFirst](https://github.com/nickcharles/Spool#sp_replacefirst)
 - [sp_replaceLast](https://github.com/nickcharles/Spool#sp_replacelast)
+- [sp_substringBeforeChar](https://github.com/nickcharles/Spool#sp_subtringbeforechar)
+- [sp_substringAFterChar](https://github.com/nickcharles/Spool#sp_substringafterchar)
 - [sp_toLowerCase](https://github.com/nickcharles/Spool#sp_tolowercase)
 - [sp_toUpperCase](https://github.com/nickcharles/Spool#sp_touppercase)
 - [sp_capitalize](https://github.com/nickcharles/Spool#sp_capitalize)
@@ -175,22 +177,18 @@ std::string sp_replaceLast(std::string input, const std::string& target, const s
 > Returns a copy of the *input* string with the last instance of *target* replaced with *replacement*
 
 
-<!--
 #### sp_substringBeforeChar()
-##### Not yet implemented
 ```C++
 std::string sp_substringBeforeChar(std:string& input, const std::string& character);
 ```
-> Returns a substring of the *input* string starting at the beginning of *input* and going up until the first instance of *character*
+> Returns a substring of the *input* string starting at the beginning of *input* and going until the first instance of *character*
 
 
 #### sp_substringAfterChar()
-##### Not yet implemented
 ```C++
 std::string sp_substringAfterChar(std:string& input, const std::string& character);
 ```
-> Returns a substring of the *input* string,starting just after the last instance of *character* and going until the end of *input* 
--->
+> Returns a substring of the *input* string starting after the last instance of *character* and going until the end of *input* 
 
 
 #### sp_toLowerCase()
