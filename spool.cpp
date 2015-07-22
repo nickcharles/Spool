@@ -7,33 +7,21 @@ bool sp_contains(const std::string& input, const std::string& phrase) {
     return true;
 }
 
-bool sp_containsAfter(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_containsAfter(const std::string& input, const std::string& phrase, std::size_t offset = 0) {
     if (input.find(phrase, offset) == std::string::npos) {
         return false;
     }
     return true;
 }
 
-bool sp_containsBefore(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_containsBefore(const std::string& input, const std::string& phrase, std::size_t offset = 0) {
     if (input.rfind(phrase, offset) == std::string::npos) {
         return false;
     }
     return true;
 }
 
-bool sp_startsWith(const std::string& input, const std::string& phrase) {
-    if (phrase.size() > input.size()) {
-        return false;
-    }
-    for (std::size_t i = 0; i < phrase.size(); ++i) {
-        if (input[i] != phrase[i]) {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool sp_startsWith(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_startsWith(const std::string& input, const std::string& phrase, std::size_t offset = 0) {
     if (phrase.size() > input.size() - offset) {
         return false;
     }
@@ -45,19 +33,7 @@ bool sp_startsWith(const std::string& input, const std::string& phrase, std::siz
     return true;
 }
 
-bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase) {
-    if (phrase.size() > input.size()) {
-        return false;
-    }
-    for (std::size_t i = 0; i < phrase.size(); ++i) {
-        if (tolower(input[i]) != tolower(phrase[i])) {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset = 0) {
     if (phrase.size() > input.size() - offset) {
         return false;
     }
@@ -69,19 +45,7 @@ bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase
     return true;
 }
 
-bool sp_endsWith(const std::string& input, const std::string& phrase) {
-    if (phrase.size() > input.size()) {
-        return false;
-    }
-    for (std::size_t i = 0; i < phrase.size(); ++i) {
-        if (input[input.size() - i] != phrase[phrase.size() - i]) {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_t offset = 0) {
     if (phrase.size() > input.size() - offset) {
         return false;
     }
@@ -93,19 +57,7 @@ bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_
     return true;
 }
 
-bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase) {
-    if (phrase.size() > input.size()) {
-        return false;
-    }
-    for (std::size_t i = 0; i < phrase.size(); ++i) {
-        if (tolower(input[input.size() - i]) != tolower(phrase[phrase.size() - i])) {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset) {
+bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset = 0) {
     if (phrase.size() > input.size() - offset) {
         return false;
     }
@@ -216,7 +168,7 @@ std::string sp_replaceLast(std::string input, const std::string& target, const s
     return input.replace(input.rfind(target), target.size(), replacement);
 }
 
-std::string sp_substringBeforeChar(const std:string& input, const std::string& character) {
+std::string sp_substringBeforeChar(const std::string& input, const std::string& character) {
     std::size_t pos = input.find(character);
     if (pos == std::string::npos) {
         return input;
@@ -224,12 +176,12 @@ std::string sp_substringBeforeChar(const std:string& input, const std::string& c
     return input.substr(0, pos + 1);
 }
 
-std::string sp_substringAfterChar(const std:string& input, const std::string& character) {
+std::string sp_substringAfterChar(const std::string& input, const std::string& character) {
     std::size_t pos = input.rfind(character);
     if (pos == std::string::npos) {
         return input;
     }
-    return input.substr(pos, std::string:npos);
+    return input.substr(pos, std::string::npos);
 }
 
 std::string sp_toLowerCase(std::string input) {
