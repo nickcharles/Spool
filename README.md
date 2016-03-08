@@ -1,5 +1,5 @@
 <p align="center">
-    <img height="200" width="200" src="https://github.com/nickcharles/Spool/blob/master/spool.png">
+    <img height="200" width="200" src="https://raw.githubusercontent.com/nickcharles/spool/master/spool.png">
 </p>
 
 ## Spool

@@ -7,25 +7,17 @@
 
 bool sp_contains(const std::string& input, const std::string& phrase);
 
-bool sp_containsAfter(const std::string& input, const std::string& phrase, std::size_t offset);
+bool sp_containsAfter(const std::string& input, const std::string& phrase, std::size_t offset = 0);
 
-bool sp_containsBefore(const std::string& input, const std::string& phrase, std::size_t offset);
+bool sp_containsBefore(const std::string& input, const std::string& phrase, std::size_t offset = 0);
 
-bool sp_startsWith(const std::string& input, const std::string& phrase);
+bool sp_startsWith(const std::string& input, const std::string& phrase, std::size_t offset = 0);
 
-bool sp_startsWith(const std::string& input, const std::string& phrase, std::size_t offset);
+bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset = 0);
 
-bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase);
+bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_t offset = 0);
 
-bool sp_startsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset);
-
-bool sp_endsWith(const std::string& input, const std::string& phrase);
-
-bool sp_endsWith(const std::string& input, const std::string& phrase, std::size_t offset);
-
-bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase);
-
-bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset);
+bool sp_endsWithIgnoreCase(const std::string& input, const std::string& phrase, std::size_t offset = 0);
 
 bool sp_equalsIgnoreCase(const std::string& first, const std::string& second);
 
