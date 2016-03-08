@@ -45,9 +45,9 @@ std::string sp_replaceFirst(std::string input, const std::string& target, const 
 
 std::string sp_replaceLast(std::string input, const std::string& target, const std::string& replacement);
 
-std::string sp_substringBeforeChar(const std:string& input, const std::string& character);
+std::string sp_substringBeforeChar(const std::string& input, const std::string& character);
 
-std::string sp_substringAfterChar(const std:string& input, const std::string& character);
+std::string sp_substringAfterChar(const std::string& input, const std::string& character);
 
 std::string sp_toLowerCase(std::string input);
 
@@ -63,6 +63,8 @@ std::string sp_trimWhitespaceLeft(const std::string& input);
 
 std::string sp_trimWhitespaceRight(const std::string& input);
 
-std::string sp_quote(std::string input);
+std::string sp_singleQuote(std::string input);
+
+std::string sp_doubleQuote(std::string input);
 
 std::string sp_repeat(std::string input, unsigned int count);
